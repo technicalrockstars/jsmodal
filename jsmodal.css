@@ -1,41 +1,111 @@
 .jsmodal-window {
-	width: 600px;
-	left: 20px;
-	top: 20px;
-	position: absolute;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	position: fixed;
-	margin: 0px auto;
-	color: #808080;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 13px;
-	font-weight: normal;
-	line-height: 18px;
 	background-color: #FFFFFF;
-	border: 1px solid #EAEEFA;
-	border: 1px solid rgba(234, 238, 250, 0.6);
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
-	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
-	box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+	-moz-opacity: 0.95;
+	opacity: 0.95;
+	border: 1px solid #eaeaea;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 	z-index: 99999;
 	display: none;
 }
 
-.jsmodal-window-header {
+.jsmodal-window .jsmodal-window-header {
+	padding: 20px;
+	border-bottom: 1px solid #EDEDED;
+	background-color: #f9f9f9;
+	margin-bottom: 12px;
 }
-.jsmodal-window-body {
+
+.jsmodal-window .jsmodal-window-header h1 {
+	line-height: 1;
+	letter-spacing: 0.15em;
+	margin: 0;
+	color: #3F3F3F;
+	font-size: 16px;
+}
+
+.jsmodal-window .jsmodal-window-body {
+	padding: 12px 0;
+}
+
+.jsmodal-window .jsmodal-window-body dl {
+	color: #3f3f3f;
+}
+
+.jsmodal-window .jsmodal-window-body dl dt {
+	vertical-align: middle;
+	font-weight: normal;
+	width: 70px;
+	margin-left: 30px;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+}
+
+
+.jsmodal-window .jsmodal-window-body p {
+	color: #999999;
+	font-size: 10px;
+	max-width: 340px;
+	margin: 5px auto;
+	text-align: center;
 }
 
 .jsmodal-window a.close {
-position: absolute;
-right: 15px;
-top: 15px;
-color: #999;
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 17px;
-font-weight: normal;
-line-height: 10px;
-text-decoration: none;
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	color: #aaaaaa;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 1;
+	text-decoration: none;
 }
+
+@media screen and (min-width: 481px) {
+
+.jsmodal-window {
+	top: 50%;
+	left: 50%;
+	margin-top: -185px;
+	margin-left: -210px;
+	width: 420px;
+	min-height: 360px;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+
+.jsmodal-window {
+	top: 50%;
+	left: 50%;
+	margin-top: -180px;
+	margin-left: -150px;
+	width: 300px;
+	min-height: 360px;
+}
+
+.jsmodal-window .jsmodal-window-header {
+	padding: 16px 20px;
+}
+
+.jsmodal-window .jsmodal-window-header h1 {
+	font-size: 14px;
+}
+
+
+
+.jsmodal-window a.close {
+	top: 11px;
+}
+
+}
+

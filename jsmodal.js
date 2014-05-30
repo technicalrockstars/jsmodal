@@ -1,26 +1,52 @@
 (function() {
 	window.jsmodal = function(id) {
 		var elem = document.getElementById(id);
+		var overlap = window.document.createElement("div");
+		overlap.style.display = "block";
+		overlap.style.opacity = "0.7";
+		overlap.style.position = "absolute";
+		overlap.style.width = "100%";
+		overlap.style.height = window.document.body.clientHeight + "px";
+		overlap.style.top = "0px";
+		overlap.style.left = "0px";
+		overlap.style.backgroundColor="#222";
 		return {
 			open : function(_option) {
 				var option = _option || {};
 				var self = this;
 				elem.style.display = 'block';
-				var left = window.document.body.clientWidth / 2 - 300;
-				var top = window.document.body.clientHeight / 2;
-				elem.style.left = (option.left ? option.left : left) + 'px';
-				elem.style.top = (option.top ? option.top : top) + 'px';
+				window.document.body.appendChild(overlap);
+
 				for(var i=0;i < elem.childNodes.length;i++) {
 					if(elem.childNodes[i].className == "close") {
 						console.log(elem.childNodes[i].className);
 						elem.childNodes[i].onclick = function() {
 							self.close();
+							return false;
 						}
 					}
+				}
+				overlap.onmousedown = function(e) {
+					if(!check(e.target)) {
+						self.close();
+						return false;
+					}
+					function check(t, index) {
+						if(!t) return false;
+						if(index > 5) return false;
+						if(t.className == "jsmodal-window") {
+							return true;
+						}else{
+							return check(t.parentNode, index++);
+						}
+					}
+					return true;
 				}
 			},
 			close : function() {
 				elem.style.display = 'none';
+				if(overlap.remove) overlap.remove();
+				else window.document.body.removeChild(overlap);
 			}
 		}
 	}

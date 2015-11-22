@@ -1,3 +1,6 @@
+/*
+  Copyright (c) 2015 Technical Rockstars
+*/
 (function(){
 	function Modal(options) {
 		var that = this;
@@ -49,7 +52,7 @@
 	Modal.prototype.setBody = function(body) {
 		this.body.appendChild(body);
 	}
-	
+
 	Modal.prototype.ok = function(cb) {
 		this.okClicked = cb;
 	}

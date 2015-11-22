@@ -1,28 +1,46 @@
-.jsmodal-window {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+/*Modal Dialog*/
+.jsmodal {
+	padding: 24px;
 	position: fixed;
 	font-size: 13px;
 	background-color: #FFFFFF;
-	-moz-opacity: 0.95;
-	opacity: 0.95;
-	border: 1px solid #eaeaea;
-	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	color: #333;
+	border-radius: 4px;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);  
 	z-index: 99999;
 	display: none;
 }
-
-.jsmodal-window .jsmodal-window-header {
-	padding: 20px;
-	border-bottom: 1px solid #EDEDED;
-	background-color: #f9f9f9;
-	margin-bottom: 12px;
+.jsmodal {
+	top: 50%;
+	left: 50%;
+	margin-top: -185px;
+	margin-left: -210px;
+	width: 420px;
+	min-height: 100px;
 }
 
-.jsmodal-window .jsmodal-window-header h1 {
+.jsmodal__screen{
+	opacity: .5;
+	position: fixed;
+	display: block;
+	width : 100%;
+	height: 100%;
+	background-color: #000;
+	top: 0;
+	left: 0;
+	z-index: 99998;
+}
+
+.jsmodal__header {
+	margin: -24px -24px 24px;
+	padding: 15px 20px;
+	border-radius: 4px 4px 0 0;
+	border-bottom: 1px solid #EDEDED;
+	background-color: #f9f9f9;
+	font-weight: bold;
+}
+
+.jsmodal__header h1 {
 	line-height: 1;
 	letter-spacing: 0.15em;
 	margin: 0;
@@ -30,82 +48,87 @@
 	font-size: 16px;
 }
 
-.jsmodal-window .jsmodal-window-body {
-	padding: 12px 0;
+.jsmodal__body {
+	padding-bottom: 24px;
 }
 
-.jsmodal-window .jsmodal-window-body dl {
-	color: #3f3f3f;
+.jsmodal__formRow {
+	margin-bottom: 12px;
 }
 
-.jsmodal-window .jsmodal-window-body dl dt {
-	vertical-align: middle;
-	font-weight: normal;
-	width: 70px;
-	margin-left: 30px;
+.jsmodal__formLabel {
+	display: block;
 	float: left;
-	height: 35px;
-	line-height: 35px;
+	width: 60px;
+	font-weight: bold;
+	position: relative;
+	top: 4px;
 }
 
+.jsmodal__formContent {
+	margin-left: 70px;
+}
 
-.jsmodal-window .jsmodal-window-body p {
-	color: #999999;
-	font-size: 10px;
-	max-width: 340px;
-	margin: 5px auto;
+.jsmodal__formInput {
+	width: 100%;
+	border-radius: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.jsmodal__formInput:focus {
+	border-color: rgb(23,113,138);
+	box-shadow: 0 0 3px 0 rgba(23,113,138, .3);
+}
+
+.jsmodal__formTextarea {
+	width: 100%;
+	padding: 4px;
+	border-radius: 3px;
+}
+.jsmodal__formTextarea:focus {
+	border-color: rgb(23,113,138);
+	box-shadow: 0 0 3px 0 rgba(23,113,138, .3);
+}
+.jsmodal__footer {
+	border-top: 1px solid #e6e6e6;
+	padding-top: 14px;
+	margin-left: -24px;
+	margin-right: -24px;
+	margin-bottom: -10px;
+}
+
+.jsmodal__btnList {
+	text-align: right;
+	padding-right: 16px;
+}
+.jsmodal__btn {
+	min-width: 50px;
+	padding: 6px 16px;
+	margin-left: 8px;
+	border-radius: 3px;
+	outline: 0;
 	text-align: center;
+	white-space: nowrap;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	border: none;
+	box-shadow: none;
+	background: #fff;
 }
 
-.jsmodal-window a.close {
-	position: absolute;
-	right: 20px;
-	top: 15px;
-	color: #aaaaaa;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 20px;
-	font-weight: normal;
-	line-height: 1;
-	text-decoration: none;
+.jsmodal__btn:hover {
+	background: #f6f6f6;
 }
 
-@media screen and (min-width: 481px) {
-
-.jsmodal-window {
-	top: 50%;
-	left: 50%;
-	margin-top: -185px;
-	margin-left: -210px;
-	width: 420px;
-	min-height: 360px;
+.jsmodal__btn--positive {
+	background-color: rgb(23,113,138);
+	color: #fff;
 }
 
+.jsmodal__btn--positive:hover {
+	background: rgba(23,113,138, .8);
 }
 
-@media screen and (max-width: 480px) {
-
-.jsmodal-window {
-	top: 50%;
-	left: 50%;
-	margin-top: -180px;
-	margin-left: -150px;
-	width: 300px;
-	min-height: 360px;
-}
-
-.jsmodal-window .jsmodal-window-header {
-	padding: 16px 20px;
-}
-
-.jsmodal-window .jsmodal-window-header h1 {
-	font-size: 14px;
-}
-
-
-
-.jsmodal-window a.close {
-	top: 11px;
-}
-
-}
 

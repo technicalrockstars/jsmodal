@@ -8,7 +8,19 @@
 	<script type="text/javascript" src="jsmodal.js"></script>
 	<script type="text/javascript">
 	window.open_dialog = function() {
-		jsmodal("modal").open();
+		var modal = new JSModal('modal');
+		var formElem = document.createElement('div');
+		var labelElem = document.createElement('span');
+		labelElem.textContent = 'Name:';
+		var nameInput = document.createElement('input');
+		nameInput.value = '';
+		formElem.appendChild(labelElem);
+		formElem.appendChild(nameInput);
+		modal.setBody(formElem)
+		modal.ok(function() {
+			console.log('ok');
+		});
+		modal.open();
 	}
 	</script>
 </head>
